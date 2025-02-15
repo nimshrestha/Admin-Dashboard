@@ -65,6 +65,11 @@ button {
 
 /* utility classes */
 
+/* a {
+    color: var(--txtclr-secondary);
+    text-decoration: none;
+} */
+
 .icon-btn {
     padding: 0;
     padding-top: 6px;
@@ -89,6 +94,15 @@ button {
     font-size: 0.75rem;
 }
 
+.large-pic {
+    width: 60px;
+    height: 60px;
+}
+
+.small-pic {
+    width: 35px;
+    height: 35px;
+}
 
 /* Header css */
 .header {
@@ -133,28 +147,17 @@ button {
     /* align-self: center; */
 }
 
-.profile-btn {
+.profile-pic {
     border-radius: 50%;
     border-style: none;
-    width: 35px;
-    height: 35px;
-    background: none;
     background-image: url(images/cat.svg);
 }
-
 
 .greeting {
     display: flex;
     align-items: center;
     gap: 24px;
     padding-top: 24px;
-}
-
-.profile-pic {
-    width: 60px;
-    height: auto;
-    border-style: none;
-    border-radius: 50%;
 }
 
 .content-btns {
