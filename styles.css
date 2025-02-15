@@ -1,0 +1,164 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  * {
+    margin: 0;
+  }
+  
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  img, picture, video, canvas, svg {
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* Main CSS */
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --bgclr-base: rgb(224, 224, 224);
+    --box-shadow: 0 4px 8px 0 rgba(20, 20, 20, 0.2);
+    --bgclr-primary: white;
+    --bgclr-secondary: rgb(0, 132, 255);
+    --txtclr-primary: black;
+    --txtclr-secondary: white;
+    --highlightclr: rgb(255, 208, 0);
+
+    background: var(--bgclr-base);
+
+}
+
+button {
+    border: none;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.header {
+    height: 20%;
+    background-color: var(--bgclr-primary);
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: repeat(2,1fr);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    /* place-items: center; */
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    /* align-self: center; */
+    gap: 6px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    max-width: 500px;
+    min-width: 100px;
+    border-radius: 20px;
+    border-style: none;
+    background: var(--bgclr-base);
+    padding: 6px 16px;
+    font-size: 1rem;
+    
+}
+
+.search-bar input:focus {
+    outline: none;
+}
+
+.icon-btn {
+    
+    padding: 0;
+    padding-top: 6px;
+    background: none;
+}
+
+.icon-btn > i {
+    font-size: 24px;
+    font-variation-settings: 'OPSZ' 20;
+    
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.5vw;
+    padding-left: 5vw;
+    /* align-self: center; */
+}
+
+.profile-btn {
+    border-radius: 50%;
+    border-style: none;
+    width: 35px;
+    height: 35px;
+    background: none;
+    background-image: url(images/cat.svg);
+}
+
+
+.greeting {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-top: 24px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: auto;
+    border-style: none;
+    border-radius: 50%;
+}
+
+.content-btns {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2vw;
+    padding-top: 24px;
+    /* flex-wrap: wrap; */
+}
+
+.content-btns > button {
+    flex-grow: 1;
+    max-width: 100px;
+    background: var(--bgclr-secondary);
+    color: var(--txtclr-secondary);
+    border-radius: 20px;
+    padding: 8px 18px;
+}
