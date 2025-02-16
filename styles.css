@@ -42,19 +42,23 @@
 /* Main CSS */
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
+    
     background: var(--bgclr-base);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 /* variables */
-    --bgclr-base: rgb(224, 224, 224);
+    --bgclr-base: rgb(197, 204, 207);
     --box-shadow: 0 4px 8px 0 rgba(20, 20, 20, 0.2);
     --bgclr-primary: white;
     --bgclr-secondary: rgb(0, 132, 255);
+    --txtclr-base: rgb(104, 103, 103);
     --txtclr-primary: black;
     --txtclr-secondary: white;
-    --highlightclr: rgb(255, 208, 0);
+    --highlightclr: rgb(255, 187, 0);
+    --card-bdr-radius: 10px;
+    --section-padding: min(20px,2vh) min(40px,4vw);
+    --card-padding: min(30px,3vh) min(30px,3vw);
+    --proj-card-padding: min(30px,3vh) min(22px,3vw);
 }
 
 button {
@@ -63,12 +67,12 @@ button {
     cursor: pointer;
 }
 
-/* utility classes */
-
-/* a {
-    color: var(--txtclr-secondary);
+a {
     text-decoration: none;
-} */
+    color: var(--txtclr-primary);
+}
+
+/* utility classes */
 
 .icon-btn {
     padding: 0;
@@ -90,18 +94,31 @@ button {
     font-size: 1.5rem;
 }
 
+.medium-font {
+    font-size: 0.9rem;
+}
+
 .small-font {
     font-size: 0.75rem;
 }
 
+.extra-s-font {
+    font-size: 0.65rem;
+}
+
 .large-pic {
-    width: 60px;
-    height: 60px;
+    width: 64px;
+    height: 64px;
 }
 
 .small-pic {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
+}
+
+.card-sub-text{
+    color: var(--txtclr-base);
+    line-height: 1.2;
 }
 
 /* Header css */
@@ -109,17 +126,16 @@ button {
     height: 20%;
     background-color: var(--bgclr-primary);
     display: grid;
-    grid-template-columns: 70% 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: repeat(2,1fr);
+    row-gap: min(10px,1vh);
     box-shadow: var(--box-shadow);
-    padding: 30px;
-    /* place-items: center; */
+    padding: var(--section-padding);
+    align-items: flex-start;
 }
 
 .search-bar {
     display: flex;
-    align-items: center;
-    /* align-self: center; */
     gap: 6px;
 }
 
@@ -142,9 +158,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 1.5vw;
-    padding-left: 5vw;
-    /* align-self: center; */
+    gap: min(20px,1.5vw);
 }
 
 .profile-pic {
@@ -157,15 +171,14 @@ button {
     display: flex;
     align-items: center;
     gap: 24px;
-    padding-top: 24px;
 }
 
 .content-btns {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2vw;
-    padding-top: 24px;
+    gap: min(20px,2vw);
+    align-self: center;
     /* flex-wrap: wrap; */
 }
 
@@ -185,8 +198,8 @@ button {
     background: var(--bgclr-secondary);
     color: var(--txtclr-secondary);
     display: grid;
-    gap: 4vh;
-    padding: 30px;
+    gap: min(40px,4vh);
+    padding: var(--section-padding);
 }
 
 .side-nav .logo {
@@ -208,13 +221,12 @@ button {
 
 .side-nav a {
     color: var(--txtclr-secondary);
-    text-decoration: none;
     /* display: block; */
 }
 
 .general-menu > ul, .service-menu > ul{
     display: grid;
-    gap: 2vh;
+    gap: min(20px,2vh);
 
 }
 
@@ -223,3 +235,72 @@ button {
     align-items: center;
     gap: 12px;
 }
+
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr minmax(16ch,28ch);
+    grid-template-rows: 1fr 1fr;
+    gap: min(20px, 2vh);
+    padding: 24px 20px;
+}
+
+.projects {
+    grid-row: 1/3;   
+}
+
+.projects, .announcements, .trending {
+    display: grid;
+    grid-template-rows: 36px 1fr;
+}
+
+.projects > .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    gap: min(26px, 3vh);
+}
+
+.proj-card {
+    background: var(--bgclr-primary);
+    padding: var(--proj-card-padding);
+    border-left: 8px solid var(--highlightclr);
+    border-radius: var(--card-bdr-radius);
+    
+}
+
+.proj-card > .icons {
+    padding-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.announcements > .cards, .trending > .cards{
+    background: var(--bgclr-primary);
+    border-radius: var(--card-bdr-radius);
+    padding: var(--card-padding);
+    display: grid;
+    gap: min(20px, 2vh);
+}
+
+.announ-card {
+    border-bottom: 1px solid var(--bgclr-base);
+    padding-bottom: min(20px, 2vh);
+
+}
+
+.announ-card > .title {
+    padding-bottom: 2px;
+}
+
+.announcements .announ-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+
+
+.trend-card {
+    display: flex;
+    gap: min(15px, 1.5vw);
+}
+
